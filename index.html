@@ -1,0 +1,60 @@
+<?doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+                           <!-- Navbar Section -->
+<body>
+
+  <div>
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="title">
+          <h2>Contact List</h2>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="  search.." class="nav navbar-nav navbar-right">
+        </div>
+      </div>
+    </div>
+
+                            <!-- Main Section -->
+
+    <div class="main" ng-controller="myController">
+
+      <div class="cards-container">
+        <div class="row">
+          <div class="contact" ng-repeat="contact in contacts">
+            <div class="col-xs-6 col-sm-4 col-md-3 columns">
+              <figure>
+                <div class="cards-image" style="background-image: url('{{contact.profile_image}}');">
+                </div>
+                <div class="cards-info">
+                  <figcaption>
+                    <img src="{{contact.icon}}" alt="">
+                    <h5>{{contact.name}}</h5>
+                    <h6>{{contact.job}} |<br> @{{contact.company_name}}</h6>
+                    <h6>Phone Number{{contact.phone}}</h6>
+                    <h6>{{contact.email}}</h6>
+                  </figcaption>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
